@@ -37,6 +37,16 @@
 
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script>
+    $(function () {
+      var includes = $('[data-include]')
+      $.each(includes, function () {
+        var file = 'views/' + $(this).data('include') + '.html'
+        $(this).load(file)
+      })
+    })
+    </script>
+
   </head>
 
   <body>
@@ -93,25 +103,27 @@
 
 <!--      </section>-->
 
-      <section>
-      <h3 id="metric-space"><sup><font color='green'><small>(NEW)</small></font></sup> Przestrzeń metryczna</h3>
-        <p>
-          Definicja. <br>
-            &emsp; Niech $X$ będzie zbiorem niepustym. Metryką w zbiorze $X$ nazywa się funkcję
+          <div data-include="metric_space"></div>
 
-          \begin{equation}
-            d: X \times X \mapsto [0, +\infty),
-          \end{equation}
+<!--      <section>-->
+<!--      <h3 id="metric-space"><sup><font color='green'><small>(NEW)</small></font></sup> Przestrzeń metryczna</h3>-->
+<!--        <p>-->
+<!--          Definicja. <br>-->
+<!--            &emsp; Niech $X$ będzie zbiorem niepustym. Metryką w zbiorze $X$ nazywa się funkcję-->
 
-          która spełnia następujące warunki: <br>
-          <ol>
-            <li>$\forall x, y \in X d(x, y) = 0 \iff x=y$ &#09; &#09; identyczność</li>
-            <li>$\forall x, y \in X d(x, y) = d(y, x)$ &#09; &#09; symetria</li>
-            <li>$\forall x, y, x \in X d(x, y) \leq d(x, z) + d(z, y)$ &#09; nierówność trójkąta</li>
-          </ol>
+<!--          \begin{equation}-->
+<!--            d: X \times X \mapsto [0, +\infty),-->
+<!--          \end{equation}-->
 
-        </p>
-      </section>
+<!--          która spełnia następujące warunki: <br>-->
+<!--          <ol>-->
+<!--            <li>$\forall x, y \in X d(x, y) = 0 \iff x=y$ &#09; &#09; identyczność</li>-->
+<!--            <li>$\forall x, y \in X d(x, y) = d(y, x)$ &#09; &#09; symetria</li>-->
+<!--            <li>$\forall x, y, x \in X d(x, y) \leq d(x, z) + d(z, y)$ &#09; nierówność trójkąta</li>-->
+<!--          </ol>-->
+
+<!--        </p>-->
+<!--      </section>-->
 
       <section>
       <h3 id="prob-space">Przestrzeń probabilistyczna </h3>
